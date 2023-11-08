@@ -1,8 +1,9 @@
+import Login from "./components/Login";
 
 function App() {
   return (
-    <div className="bg-red-800">
-      Hello from react
+    <div >
+      <Login/>
     </div>
   );
 }
