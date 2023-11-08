@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react'
+import validate from '../utils/validate';
 
 const Login = () => {
-    const [isSignIn,setIsSignIn]=useState(true);
+    const [isSignIn,setIsSignIn]=useState(false);
     const [errorMessage,setErrorMessage]=useState(null);
 
     const name=useRef();
@@ -9,7 +10,8 @@ const Login = () => {
     const password=useRef();
 
     const handleButtonClick=()=>{
-        
+        const message=validate(email.current.value,password.current.value);
+        setErrorMessage(message);
     }
 
     const switchBetweenSignInSignUp=()=>{
